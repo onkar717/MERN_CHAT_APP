@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.Appname{
+  min-height: 100vh;
+  display: flex;
+  background: rgb(0, 255, 255);
+  background-size: cover;
+  background-position: center;
+  color: black;
+}
