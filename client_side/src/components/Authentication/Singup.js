@@ -102,7 +102,7 @@ function Singup() {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.post("/api/user", { name, email, password, pic }, pic);
+      const { data } = await axios.post("/api/user", { name, email, password, pic }, config);
       toast({
         title: 'Registration Successful',
         status: 'success',
@@ -110,9 +110,9 @@ function Singup() {
         position: "bottom",
         isClosable: true,
       });
-      localStorage.setItem('userinfo', JSON.stringify(data))
+      localStorage.setItem('userInfo', JSON.stringify(data))
       setloading(false);
-      history.push('/chats'); // Corrected navigation here
+      history.push('/'); // Corrected navigation here
     } catch (error) {
       toast({
         title: 'Error Occurred',

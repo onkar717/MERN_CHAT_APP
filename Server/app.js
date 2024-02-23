@@ -21,7 +21,7 @@ app.get('/' , (req,res) => {
     res.send("Api is Runng");
 })
 
-// To navigate all routes here 
+// To navigate all routes here  
 app.use('/api/user', route)
 app.use('/api/chats' , chatRoutes)
 

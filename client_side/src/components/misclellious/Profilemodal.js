@@ -17,8 +17,9 @@ import React from "react";
 import { useChatState } from "../contextapi/contextprovider";
 
 
-function Profilemodal({ user , children }) {
-  // const {user} = useChatState();
+function Profilemodal({ children }) {
+  const {user} = useChatState();
+  console.log(user);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -42,7 +43,9 @@ function Profilemodal({ user , children }) {
           fontFamily="Work sans"
           display="flex"
           justifyContent="center"
-          >{user?.name}</ModalHeader>
+          >
+            {user?.name}
+            </ModalHeader>
           <ModalCloseButton />
           <ModalBody
           display="flex"
@@ -53,19 +56,18 @@ function Profilemodal({ user , children }) {
             <Image
             borderRadius="full"
             boxSize="150px"
-            // src={user.pic}
-            // alt={user.name}
+            src={user.pic}
+            alt={user.name}
             />
           </ModalBody>
         <Text
         fontSize={{base:"28px",md: "30px"}}
         fontFamily="Work sans"
         >
-          Email :0
-            {/* Email: {user.email} */}
+            Email: {user.email}
         </Text>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button colorScheme="blue" marginRight="150px" onClick={onClose}>
               Close
             </Button>
           </ModalFooter>

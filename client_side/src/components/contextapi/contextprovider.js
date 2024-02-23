@@ -4,12 +4,15 @@ import { useHistory } from 'react-router-dom';
 const ChatContext = createContext();
 
 const Chatprovider = ({ children }) => {
-    const [user, setuser] = useState();
+    const [user, setuser] = useState([]);
+    const [SelectedChat, setSelectedChat] = useState([]);
+    const [Chat , setChat] = useState([]);
 
     const history = useHistory();
 
     useEffect(() => {
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+        console.log(userInfo);
         setuser(userInfo);
 
         if (!userInfo) {
@@ -18,7 +21,7 @@ const Chatprovider = ({ children }) => {
     }, [history]);
 
     return (
-        <ChatContext.Provider value={{ user, setuser }}>
+        <ChatContext.Provider value={{ user, setuser , SelectedChat , setSelectedChat , Chat , setChat}}>
             {children}
         </ChatContext.Provider>
     );
